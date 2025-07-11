@@ -360,3 +360,17 @@ footer {
 .counter {
   text-align: center;
 }
+.form-status {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.form-status.success {
+  color: #4caf50;
+}
+.form-status.error {
+  color: #f44336;
+}
+.form-status.sending {
+  color: #ffa000;
+}

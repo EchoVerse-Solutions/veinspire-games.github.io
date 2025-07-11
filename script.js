@@ -24,6 +24,101 @@ document.addEventListener("DOMContentLoaded", () => {
           counter.innerText = count + inc;
           setTimeout(updateCount, 30);
         } else {
+          counter.innerText = target + "+";
+        }
+      };
+      updateCount();
+    });
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.disconnect();
+      }
+    });
+  });
+
+  counters.forEach(counter => observer.observe(counter));
+
+  // Language switching logic
+  const translations = {
+    // ... translations object (оставь как есть)
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang");
+
+      langButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const keys = document.querySelectorAll("[data-key]");
+      keys.forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    });
+  });
+
+  // 📨 Form handling + Formspree + reCAPTCHA
+  const form = document.getElementById("contact-form");
+  const statusDiv = document.getElementById("form-status");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusDiv.textContent = "Sending...";
+      statusDiv.className = "form-status sending";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          statusDiv.textContent = "Message sent successfully!";
+          statusDiv.className = "form-status success";
+          form.reset();
+          if (typeof grecaptcha !== "undefined") {
+            grecaptcha.reset();
+          }
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (err) {
+        statusDiv.textContent = "Error sending message.";
+        statusDiv.className = "form-status error";
+      }
+    });
+  }
+});
+
+  // Counter animation
+  const counters = document.querySelectorAll(".counter .num");
+  const speed = 200;
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+        const inc = Math.ceil(target / speed);
+        if (count < target) {
+          counter.innerText = count + inc;
+          setTimeout(updateCount, 30);
+        } else {
 	  counter.innerText = target + "+";
         }
       };
