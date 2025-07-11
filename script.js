@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll
+  // 🌐 Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Counter animation
+  // 🔢 Counter animation
   const counters = document.querySelectorAll(".counter .num");
   const speed = 200;
 
@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach(counter => {
       const updateCount = () => {
         const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
-        const inc = Math.ceil(target / speed);
-        if (count < target) {
-          counter.innerText = count + inc;
+        const current = +counter.innerText.replace("+", "");
+        const increment = Math.ceil(target / speed);
+
+        if (current < target) {
+          counter.innerText = current + increment;
           setTimeout(updateCount, 30);
         } else {
           counter.innerText = target + "+";
@@ -41,103 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   counters.forEach(counter => observer.observe(counter));
-
-  // Language switching logic
-  const translations = {
-    // ... translations object (оставь как есть)
-  };
-
-  const langButtons = document.querySelectorAll(".lang-btn");
-
-  langButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-lang");
-
-      langButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const keys = document.querySelectorAll("[data-key]");
-      keys.forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-    });
-  });
-
-  // 📨 Form handling + Formspree + reCAPTCHA
-  const form = document.getElementById("contact-form");
-  const statusDiv = document.getElementById("form-status");
-
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      statusDiv.textContent = "Sending...";
-      statusDiv.className = "form-status sending";
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
-          }
-        });
-
-        if (response.ok) {
-          statusDiv.textContent = "Message sent successfully!";
-          statusDiv.className = "form-status success";
-          form.reset();
-          if (typeof grecaptcha !== "undefined") {
-            grecaptcha.reset();
-          }
-        } else {
-          throw new Error("Form submission failed");
-        }
-      } catch (err) {
-        statusDiv.textContent = "Error sending message.";
-        statusDiv.className = "form-status error";
-      }
-    });
-  }
-});
-
-  // Counter animation
-  const counters = document.querySelectorAll(".counter .num");
-  const speed = 200;
-
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
-        const inc = Math.ceil(target / speed);
-        if (count < target) {
-          counter.innerText = count + inc;
-          setTimeout(updateCount, 30);
-        } else {
-	  counter.innerText = target + "+";
-        }
-      };
-      updateCount();
-    });
-  };
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounters();
-        observer.disconnect();
-      }
-    });
-  });
-
-  counters.forEach(counter => observer.observe(counter));
-
-  // Full translations
+  // 🌍 Языковая логика (translations)
   const translations = {
     en: {
       nav_about: "About Us",
@@ -172,29 +77,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       p1_title: "Shadow Drift",
       p1_desc: "Stealth action game in a neon-lit city. Avoid detection and hack into secure systems.",
-
       p2_title: "Echo Protocol",
       p2_desc: "Tactical sci-fi shooter with team-based objectives and destructible environments.",
-
       p3_title: "Neon Warden",
       p3_desc: "Manage a futuristic prison and uncover conspiracies in a dark pixel world.",
-
       p4_title: "Pixel Forge",
       p4_desc: "Forge unique weapons with lore in a procedurally-generated side-scrolling world.",
-
       p5_title: "Rift Hunters",
       p5_desc: "Switch between dimensions to hunt creatures across parallel universes.",
-
       p6_title: "Crimson Arena",
       p6_desc: "Fast-paced multiplayer combat in stylized gothic arenas.",
-
       p7_title: "Void Symphony",
       p7_desc: "Narrative-heavy space adventure where music alters reality.",
-
       p8_title: "Quantum Bloom",
       p8_desc: "A puzzle platformer where every flower blooms with a memory."
     },
-
     ru: {
       nav_about: "О нас",
       nav_services: "Услуги",
@@ -228,29 +125,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
       p1_title: "Тень Дрифта",
       p1_desc: "Скрытный экшен в неоновых улицах. Взламывай и избегай камер.",
-
       p2_title: "Протокол Эхо",
       p2_desc: "Тактический шутер с командной игрой и разрушаемыми локациями.",
-
       p3_title: "Неоновый Надзиратель",
       p3_desc: "Управляй тюрьмой будущего и раскрой мрачные тайны.",
-
       p4_title: "Пиксельная Кузница",
       p4_desc: "Куй оружие с историей в процедурно-генерируемом мире.",
-
       p5_title: "Охотники Разлома",
       p5_desc: "Переходи между измерениями, чтобы побеждать чудовищ.",
-
       p6_title: "Арена Багрового",
       p6_desc: "Скоростные бои в готических аренах с уникальным стилем.",
-
       p7_title: "Симфония Пустоты",
       p7_desc: "Музыка влияет на сюжет в космическом приключении.",
-
       p8_title: "Квантовый Цветок",
       p8_desc: "Каждый цветок — это память. Платформер-головоломка."
     },
-
     ka: {
       nav_about: "ჩვენს შესახებ",
       nav_services: "სერვისები",
@@ -284,38 +173,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       p1_title: "ჩრდილის დრიфтერი",
       p1_desc: "დამალული მოქმედება ნეონურ ქალაქში. აიცილეთ მტრები და გატეხეთ სისტემები.",
-
       p2_title: "ექოს პროტოკოლი",
       p2_desc: "ტაქტიკური შუთერი გუნდური რეჟიმით და განადგურებადი რუკებით.",
-
       p3_title: "ნეონის მცველი",
       p3_desc: "მომავლის ციხის მართვა და საიდუმლოებების გამჟღავნება.",
-
       p4_title: "პიქსელის ქვა",
       p4_desc: "მოამზადე იარაღი ისტორიით გენერირებულ სამყაროში.",
-
       p5_title: "განზომილებათა მონადირეები",
       p5_desc: "მოძრაობა პარალელურ სამყაროს შორის მონსტრების დასამარცხებლად.",
-
       p6_title: "ბაგრატის არენა",
       p6_desc: "სწრაფი ბრძოლები გოთიკურ არენებზე.",
-
       p7_title: "ვაკუუმის სიმფონია",
       p7_desc: "მუსიკა განსაზღვრავს მოვლენებს კოსმოსურ თავგადასავალში.",
-
       p8_title: "კვანტური ყვავილი",
       p8_desc: "თითოეული ყვავილი მოგონებაა. თავსატეხი პლატფორმერი."
     }
   };
 
-  // Language switch logic
   const langButtons = document.querySelectorAll(".lang-btn");
-
   langButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang");
-
-      // Set active class
       langButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
@@ -328,10 +206,44 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // 📬 Formspree + honeypot + reCAPTCHA
+  const form = document.getElementById("contact-form");
+  const statusDiv = document.getElementById("form-status");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (form.querySelector('[name="honeypot"]').value !== "") return;
+
+      statusDiv.textContent = "Sending...";
+      statusDiv.className = "form-status sending";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (response.ok) {
+          statusDiv.textContent = "Message sent successfully!";
+          statusDiv.className = "form-status success";
+          form.reset();
+          if (typeof grecaptcha !== "undefined") {
+            grecaptcha.reset();
+          }
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (err) {
+        statusDiv.textContent = "Error sending message.";
+        statusDiv.className = "form-status error";
+      }
+    });
+  }
 });
-if (count < target) {
-  counter.innerText = count + inc;
-  setTimeout(updateCount, 30);
-} else {
-  counter.innerText = target + "+";
-}
