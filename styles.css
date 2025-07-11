@@ -374,3 +374,20 @@ footer {
 .form-status.sending {
   color: #ffa000;
 }
+.contact button[type="submit"] {
+  align-self: center; /* Центрируем в колонке */
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: white;
+  color: #3c1017;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto; /* <<< вот это главное! */
+  max-width: 100%;
+}
+
+.contact button[type="submit"]:hover {
+  background-color: #eee;
+}
