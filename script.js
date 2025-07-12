@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   counters.forEach(counter => observer.observe(counter));
+
   // 🌍 Языковая логика (translations)
   const translations = {
     en: {
@@ -59,38 +60,46 @@ document.addEventListener("DOMContentLoaded", () => {
       c2: "Projects shipped",
       c3: "AA/AAA games",
       c4: "Partners",
-      f1: "Product thinking & producer's approach",
-      f2: "Flexible team: Unity & Unreal",
-      f3: "Global culture without overpricing",
-      f4: "Focus on story, systems, and production-heavy projects",
-      s1: "Full-Cycle Development",
-      s2: "2D/3D Art",
-      s3: "UI/UX",
-      s4: "Game & Level Design",
-      s5: "Programming",
-      s6: "QA / Game Testing",
-      s7: "Localization / Voiceover",
-      s8: "Analytics / LiveOps",
-      s9: "Prototyping / R&D",
+      f1_title: "Product thinking",
+      f1_desc: "Producer's mindset and focus on business value",
+      f2_title: "Flexible team",
+      f2_desc: "Unity & Unreal expertise for any genre",
+      f3_title: "Global culture",
+      f3_desc: "No overpricing, multicultural approach",
+      f4_title: "Story & Systems",
+      f4_desc: "Focus on narrative, gameplay, and scalable production",
+      s1_title: "Full-Cycle Development",
+      s1_desc: "Turnkey game development from idea to launch",
+      s2_title: "2D/3D Art",
+      s2_desc: "Concepts, characters, environments, VFX",
+      s3_title: "UI/UX",
+      s3_desc: "User interface, prototyping, usability",
+      s4_title: "Game & Level Design",
+      s4_desc: "Mechanics, narrative, balancing, worlds",
+      s5_title: "Programming",
+      s5_desc: "Unity, Unreal, networking, gameplay",
+      s6_title: "QA / Game Testing",
+      s6_desc: "Full test coverage and quality assurance",
+      s7_title: "Localization / Voiceover",
+      s7_desc: "Multi-language translation, casting, VO",
+      s8_title: "Analytics / LiveOps",
+      s8_desc: "Data, A/B testing, retention, monetization",
+      s9_title: "Prototyping / R&D",
+      s9_desc: "Tech research and fast prototyping",
       hero_desc: "Flexible full-cycle outsourcing studio specializing in game development for PC, consoles, and mobile.",
       cta: "Get in touch",
-
-      p1_title: "Shadow Drift",
-      p1_desc: "Stealth action game in a neon-lit city. Avoid detection and hack into secure systems.",
-      p2_title: "Echo Protocol",
-      p2_desc: "Tactical sci-fi shooter with team-based objectives and destructible environments.",
-      p3_title: "Neon Warden",
-      p3_desc: "Manage a futuristic prison and uncover conspiracies in a dark pixel world.",
-      p4_title: "Pixel Forge",
-      p4_desc: "Forge unique weapons with lore in a procedurally-generated side-scrolling world.",
-      p5_title: "Rift Hunters",
-      p5_desc: "Switch between dimensions to hunt creatures across parallel universes.",
-      p6_title: "Crimson Arena",
-      p6_desc: "Fast-paced multiplayer combat in stylized gothic arenas.",
-      p7_title: "Void Symphony",
-      p7_desc: "Narrative-heavy space adventure where music alters reality.",
-      p8_title: "Quantum Bloom",
-      p8_desc: "A puzzle platformer where every flower blooms with a memory."
+      p1_title: "Life is strange",
+      p1_desc: "Episodic narrative adventure with branching dialogue, choice-based progression, and time-rewind mechanics.",
+      p2_title: "Life is strange 2",
+      p2_desc: "Episodic narrative adventure with branching choices, emotional storytelling, and AI-driven companion behavior.",
+      p3_title: "Hitman 3",
+      p3_desc: "Stealth action game with sandbox missions, systemic AI, and multi-path level design across global locations.",
+      p4_title: "Unannounced Mobile MMORPG",
+      p4_desc: "Mobile MMORPG survival game with crafting, open world exploration, and real-time PvP mechanics.",
+      p5_title: "15+ Casual Mobile Games",
+      p5_desc: "Casual mobile games with fast onboarding, lightweight mechanics, and high user retention across genres.",
+      p6_title: "5+ MidCore Mobile Games",
+      p6_desc: "Midcore projects with session-based combat, meta-progression, and monetization-ready systems."
     },
     ru: {
       nav_about: "О нас",
@@ -107,38 +116,46 @@ document.addEventListener("DOMContentLoaded", () => {
       c2: "Проектов выполнено",
       c3: "AA/AAA игр",
       c4: "Партнёров",
-      f1: "Продуктовое мышление и продюсерский подход",
-      f2: "Гибкая команда: Unity и Unreal",
-      f3: "Глобальная культура без оверпрайса",
-      f4: "Фокус на нарратив, системы и продакшн",
-      s1: "Разработка под ключ",
-      s2: "2D/3D Арт",
-      s3: "UI/UX",
-      s4: "Геймдизайн и левелдизайн",
-      s5: "Программирование",
-      s6: "QA / Тестирование",
-      s7: "Локализация / Озвучка",
-      s8: "Аналитика / LiveOps",
-      s9: "Прототипирование / R&D",
+      f1_title: "Продуктовое мышление",
+      f1_desc: "Продюсерский подход и фокус на бизнес-результат",
+      f2_title: "Гибкая команда",
+      f2_desc: "Экспертиза в Unity и Unreal для любых жанров",
+      f3_title: "Глобальная культура",
+      f3_desc: "Без оверпрайса, мультикультурный подход",
+      f4_title: "Нарратив и системы",
+      f4_desc: "Фокус на истории, геймплее и масштабируемом продакшне",
+      s1_title: "Разработка под ключ",
+      s1_desc: "Создаём игры от идеи до релиза",
+      s2_title: "2D/3D Арт",
+      s2_desc: "Концепты, персонажи, окружение, VFX",
+      s3_title: "UI/UX",
+      s3_desc: "Интерфейсы, прототипы, юзабилити",
+      s4_title: "Геймдизайн и левелдизайн",
+      s4_desc: "Механики, нарратив, баланс, миры",
+      s5_title: "Программирование",
+      s5_desc: "Unity, Unreal, сетевое и геймплей",
+      s6_title: "QA / Тестирование",
+      s6_desc: "Полное покрытие и контроль качества",
+      s7_title: "Локализация / Озвучка",
+      s7_desc: "Мультиязычный перевод, кастинг, запись VO",
+      s8_title: "Аналитика / LiveOps",
+      s8_desc: "Данные, A/B тесты, удержание, монетизация",
+      s9_title: "Прототипирование / R&D",
+      s9_desc: "Технические исследования и быстрые прототипы",
       hero_desc: "Гибкая студия полного цикла, специализирующаяся на разработке игр для ПК, консолей и мобильных устройств.",
       cta: "Связаться",
-
-      p1_title: "Тень Дрифта",
-      p1_desc: "Скрытный экшен в неоновых улицах. Взламывай и избегай камер.",
-      p2_title: "Протокол Эхо",
-      p2_desc: "Тактический шутер с командной игрой и разрушаемыми локациями.",
-      p3_title: "Неоновый Надзиратель",
-      p3_desc: "Управляй тюрьмой будущего и раскрой мрачные тайны.",
-      p4_title: "Пиксельная Кузница",
-      p4_desc: "Куй оружие с историей в процедурно-генерируемом мире.",
-      p5_title: "Охотники Разлома",
-      p5_desc: "Переходи между измерениями, чтобы побеждать чудовищ.",
-      p6_title: "Арена Багрового",
-      p6_desc: "Скоростные бои в готических аренах с уникальным стилем.",
-      p7_title: "Симфония Пустоты",
-      p7_desc: "Музыка влияет на сюжет в космическом приключении.",
-      p8_title: "Квантовый Цветок",
-      p8_desc: "Каждый цветок — это память. Платформер-головоломка."
+      p1_title: "Life is strange",
+      p1_desc: "Эпизодическая сюжетная игра с ветвящимися диалогами, выбором игрока и механикой перемотки времени.",
+      p2_title: "Life is strange 2",
+      p2_desc: "Эпизодическая сюжетная игра с разветвлёнными выборами, эмоциональным повествованием и ИИ-компаньоном.",
+      p3_title: "Hitman 3",
+      p3_desc: "Стелс-шутер с песочными миссиями, системным ИИ и нелинейным дизайном уровней по всему миру.",
+      p4_title: "Unannounced Mobile MMORPG",
+      p4_desc: "Мобильная MMORPG с выживанием, крафтом, открытым миром и PvP в реальном времени.",
+      p5_title: "15+ Casual Mobile Games",
+      p5_desc: "Казуальные мобильные игры с быстрым освоением, легкими механиками и высоким уровнем удержания пользователей во множестве жанров.",
+      p6_title: "5+ MidCore Mobile Games",
+      p6_desc: "Мидкорные проекты с сессионными боями, мета-прогрессом и системами, готовыми к монетизации."
     },
     ka: {
       nav_about: "ჩვენს შესახებ",
@@ -155,57 +172,98 @@ document.addEventListener("DOMContentLoaded", () => {
       c2: "დასრულებული პროექტი",
       c3: "AA/AAA თამაშები",
       c4: "პარტნიორი",
-      f1: "პროდუქტზე ორიენტირებული აზროვნება",
-      f2: "მორგებადი გუნდი: Unity და Unreal",
-      f3: "გლობალური კულტურა, მისაღები ფასები",
-      f4: "ფოკუსი სიუჟეტზე და სისტემებზე",
-      s1: "სრული ციკლის განვითარება",
-      s2: "2D/3D არტი",
-      s3: "UI/UX დიზაინი",
-      s4: "თამაშისა და დონის დიზაინი",
-      s5: "პროგრამირება",
-      s6: "ტესტირება",
-      s7: "ლოკალიზაცია და გახმოვანება",
-      s8: "ანალიტიკა / LiveOps",
-      s9: "პროტოტიპირება და კვლევა",
+      f1_title: "პროდუქტული აზროვნება",
+      f1_desc: "პროდიუსერის მიდგომა და ბიზნესზე ორიენტირება",
+      f2_title: "მორგებადი გუნდი",
+      f2_desc: "Unity & Unreal გამოცდილება ყველა ჟანრში",
+      f3_title: "გლობალური კულტურა",
+      f3_desc: "მიწვდომადი ფასები და მრავალკულტურული გარემო",
+      f4_title: "სიუჟეტი და სისტემები",
+      f4_desc: "ფოკუსი სიუჟეტზე, მექანიკაზე და მასშტაბურობაზე",
+      s1_title: "სრული ციკლის განვითარება",
+      s1_desc: "თამაშის შექმნა იდეიდან გამოსვლამდე",
+      s2_title: "2D/3D არტი",
+      s2_desc: "კონცეფტები, პერსონაჟები, გარემო, VFX",
+      s3_title: "UI/UX",
+      s3_desc: "ინტერფეისი, პროტოტიპირება, გამოყენებადობა",
+      s4_title: "თამაშისა და დონის დიზაინი",
+      s4_desc: "მექანიკა, სიუჟეტი, ბალანსი, სამყაროები",
+      s5_title: "პროგრამირება",
+      s5_desc: "Unity, Unreal, ქსელები, გეიმპლეი",
+      s6_title: "ტესტირება",
+      s6_desc: "სრული ტესტირება და ხარისხის კონტროლი",
+      s7_title: "ლოკალიზაცია და გახმოვანება",
+      s7_desc: "მრავალენოვანი თარგმანი, კასტინგი, VO",
+      s8_title: "ანალიტიკა / LiveOps",
+      s8_desc: "მონაცემები, A/B ტესტი, მონეტიზაცია",
+      s9_title: "პროტოტიპირება და კვლევა",
+      s9_desc: "ტექნოლოგიური კვლევა და სწრაფი პროტოტიპი",
       hero_desc: "მორგებადი აუთსორსინგ სტუდია, რომელიც სპეციალიზდება კომპიუტერულ, კონსოლურ და მობილურ თამაშებში.",
       cta: "დაგვიკავშირდით",
-
-      p1_title: "ჩრდილის დრიфтერი",
-      p1_desc: "დამალული მოქმედება ნეონურ ქალაქში. აიცილეთ მტრები და გატეხეთ სისტემები.",
-      p2_title: "ექოს პროტოკოლი",
-      p2_desc: "ტაქტიკური შუთერი გუნდური რეჟიმით და განადგურებადი რუკებით.",
-      p3_title: "ნეონის მცველი",
-      p3_desc: "მომავლის ციხის მართვა და საიდუმლოებების გამჟღავნება.",
-      p4_title: "პიქსელის ქვა",
-      p4_desc: "მოამზადე იარაღი ისტორიით გენერირებულ სამყაროში.",
-      p5_title: "განზომილებათა მონადირეები",
-      p5_desc: "მოძრაობა პარალელურ სამყაროს შორის მონსტრების დასამარცხებლად.",
-      p6_title: "ბაგრატის არენა",
-      p6_desc: "სწრაფი ბრძოლები გოთიკურ არენებზე.",
-      p7_title: "ვაკუუმის სიმფონია",
-      p7_desc: "მუსიკა განსაზღვრავს მოვლენებს კოსმოსურ თავგადასავალში.",
-      p8_title: "კვანტური ყვავილი",
-      p8_desc: "თითოეული ყვავილი მოგონებაა. თავსატეხი პლატფორმერი."
+      p1_title: "Life is strange",
+      p1_desc: "ეპიზოდური სიუჟეტური თამაში არჩევით, დიალოგის სისტემით და დროის დაბრუნების მექანიკით.",
+      p2_title: "Life is strange 2",
+      p2_desc: "ეპიზოდური სიუჟეტური თამაში ემოციური სიუჟეტით, არჩევანზე დაფუძნებული პროგრესით და AI-თანამგზავრით.",
+      p3_title: "Hitman 3",
+      p3_desc: "ჩუმად მოქმედების თამაში ღია მისიებით, სისტემური AI-ით და არალინეური ლოკაციებით მსოფლიოს მასშტაბით.",
+      p4_title: "Unannounced Mobile MMORPG",
+      p4_desc: "მობილური MMORPG გადარჩენით, ქრაფტინგით, ღია სამყაროთი და რეალურ დროში PvP-ით.",
+      p5_title: "15+ Casual Mobile Games",
+      p5_desc: "ყოველდღიური მობილური თამაშები სწრაფი სწავლის მრუდით, მარტივი მექანიკით და მომხმარებლის მაღალი შენარჩუნებით სხვადასხვა ჟანრში.",
+      p6_title: "5+ MidCore Mobile Games",
+      p6_desc: "საშუალო ბირთვის პროექტები სესიაზე დაფუძნებული საბრძოლო მოქმედებით, მეტა-პროგრესირებით და მონეტიზაციისთვის მზა სისტემებით."
     }
   };
 
-  const langButtons = document.querySelectorAll(".lang-btn");
-  langButtons.forEach(btn => {
+  // Переключение языков (десктоп + мобильное меню)
+  function applyLang(lang) {
+    document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add("active"));
+
+    const keys = document.querySelectorAll("[data-key]");
+    keys.forEach(el => {
+      const key = el.getAttribute("data-key");
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  // Клик по языковым кнопкам
+  document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const lang = btn.getAttribute("data-lang");
-      langButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const keys = document.querySelectorAll("[data-key]");
-      keys.forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
+      applyLang(lang);
     });
   });
+
+  // --- Мобильное меню (бургер) ---
+  const burger = document.getElementById("mobile-burger");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileClose = document.getElementById("mobile-menu-close");
+  if (burger && mobileMenu && mobileClose) {
+    burger.addEventListener("click", () => {
+      mobileMenu.classList.add("open");
+    });
+    mobileClose.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+    });
+    // Клик вне меню закрывает
+    mobileMenu.addEventListener("click", (e) => {
+      if (e.target === mobileMenu) mobileMenu.classList.remove("open");
+    });
+    // Клик по ссылке — закрывает меню
+    mobileMenu.querySelectorAll("a").forEach(link =>
+      link.addEventListener("click", () => mobileMenu.classList.remove("open"))
+    );
+    // Переключение языков в мобильном меню синхронизирует активность
+    mobileMenu.querySelectorAll(".lang-btn").forEach(btn =>
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        applyLang(lang);
+      })
+    );
+  }
 
   // 📬 Formspree + honeypot + reCAPTCHA
   const form = document.getElementById("contact-form");
@@ -214,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      if (form.querySelector('[name="honeypot"]').value !== "") return;
+      if (form.querySelector('[name="honeypot"]') && form.querySelector('[name="honeypot"]').value !== "") return;
 
       statusDiv.textContent = "Sending...";
       statusDiv.className = "form-status sending";

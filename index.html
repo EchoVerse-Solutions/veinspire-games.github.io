@@ -12,7 +12,7 @@
 
   <header class="site-header">
     <div class="logo"><a href="#top"><img src="assets/logo.png" alt="Veinspire Games Logo"></a></div>
-    <nav>
+    <nav class="desktop-nav">
       <ul>
         <li><a href="#about" data-key="nav_about">About Us</a></li>
         <li><a href="#services" data-key="nav_services">Services</a></li>
@@ -21,12 +21,33 @@
         <li><a href="#contact" data-key="nav_contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="lang-switch">
+    <div class="lang-switch desktop-lang">
       <button data-lang="en" class="lang-btn active">EN</button>
       <button data-lang="ru" class="lang-btn">RU</button>
       <button data-lang="ka" class="lang-btn">GE</button>
     </div>
+    <!-- Мобильный бургер -->
+    <div class="mobile-burger" id="mobile-burger">&#9776;</div>
   </header>
+
+  <!-- Мобильное боковое меню -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-close" id="mobile-menu-close">&times;</span>
+    </div>
+    <ul>
+      <li><a href="#about" data-key="nav_about">About Us</a></li>
+      <li><a href="#services" data-key="nav_services">Services</a></li>
+      <li><a href="#portfolio" data-key="nav_projects">Projects</a></li>
+      <li><a href="#platforms" data-key="nav_platforms">Platforms</a></li>
+      <li><a href="#contact" data-key="nav_contact">Contact</a></li>
+    </ul>
+    <div class="lang-switch mobile-lang">
+      <button data-lang="en" class="lang-btn active">EN</button>
+      <button data-lang="ru" class="lang-btn">RU</button>
+      <button data-lang="ka" class="lang-btn">GE</button>
+    </div>
+  </div>
 
   <div class="background">
     <section id="top" class="hero">
@@ -40,45 +61,70 @@
     <section id="about" class="section about">
       <h2 data-key="about_title">About Us</h2>
       <div class="features">
-        <div class="feature-card" data-key="f1">Product thinking & producer's approach</div>
-        <div class="feature-card" data-key="f2">Flexible team: Unity & Unreal</div>
-        <div class="feature-card" data-key="f3">Global culture without overpricing</div>
-        <div class="feature-card" data-key="f4">Focus on story, systems, and production-heavy projects</div>
+        <div class="feature-card">
+          <div class="feature-title" data-key="f1_title">Product thinking</div>
+          <div class="feature-desc" data-key="f1_desc">Producer's mindset and focus on business value</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title" data-key="f2_title">Flexible team</div>
+          <div class="feature-desc" data-key="f2_desc">Unity & Unreal expertise for any genre</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title" data-key="f3_title">Global culture</div>
+          <div class="feature-desc" data-key="f3_desc">No overpricing, multicultural approach</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title" data-key="f4_title">Story & Systems</div>
+          <div class="feature-desc" data-key="f4_desc">Focus on narrative, gameplay, and scalable production</div>
+        </div>
       </div>
       <div class="counters">
         <div class="counter"><span class="num" data-target="10">0</span><p data-key="c1">Years of experience</p></div>
-        <div class="counter"><span class="num" data-target="50">0</span><p data-key="c2">Projects shipped</p></div>
-        <div class="counter"><span class="num" data-target="35">0</span><p data-key="c3">AA/AAA games</p></div>
+        <div class="counter"><span class="num" data-target="40">0</span><p data-key="c2">Projects shipped</p></div>
+        <div class="counter"><span class="num" data-target="25">0</span><p data-key="c3">AA/AAA games</p></div>
         <div class="counter"><span class="num" data-target="11">0</span><p data-key="c4">Partners</p></div>
-      </div>
-
-      <div class="partners-carousel">
-        <div class="carousel-track">
-          <img src="assets/partner1.svg" alt=""><img src="assets/partner2.svg" alt="">
-          <img src="assets/partner3.svg" alt=""><img src="assets/partner4.svg" alt="">
-          <img src="assets/partner5.svg" alt=""><img src="assets/partner6.svg" alt="">
-          <img src="assets/partner7.svg" alt=""><img src="assets/partner8.svg" alt="">
-          <img src="assets/partner9.svg" alt=""><img src="assets/partner10.svg" alt="">
-          <img src="assets/partner11.svg" alt="">
-          <img src="assets/partner1.svg" alt=""><img src="assets/partner2.svg" alt="">
-          <img src="assets/partner3.svg" alt=""><img src="assets/partner4.svg" alt="">
-          <img src="assets/partner5.svg" alt=""><img src="assets/partner6.svg" alt="">
-        </div>
       </div>
     </section>
 
     <section id="services" class="section services">
       <h2 data-key="services_title">Our Services</h2>
       <div class="services-grid">
-        <div class="service-card" data-key="s1">Full-Cycle Development</div>
-        <div class="service-card" data-key="s2">2D/3D Art</div>
-        <div class="service-card" data-key="s3">UI/UX</div>
-        <div class="service-card" data-key="s4">Game & Level Design</div>
-        <div class="service-card" data-key="s5">Programming</div>
-        <div class="service-card" data-key="s6">QA / Game Testing</div>
-        <div class="service-card" data-key="s7">Localization / Voiceover</div>
-        <div class="service-card" data-key="s8">Analytics / LiveOps</div>
-        <div class="service-card" data-key="s9">Prototyping / R&D</div>
+        <div class="service-card">
+          <div class="service-title" data-key="s1_title">Full-Cycle Development</div>
+          <div class="service-desc" data-key="s1_desc">Turnkey game development from idea to launch</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s2_title">2D/3D Art</div>
+          <div class="service-desc" data-key="s2_desc">Concepts, characters, environments, VFX</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s3_title">UI/UX</div>
+          <div class="service-desc" data-key="s3_desc">User interface, prototyping, usability</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s4_title">Game & Level Design</div>
+          <div class="service-desc" data-key="s4_desc">Mechanics, narrative, balancing, worlds</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s5_title">Programming</div>
+          <div class="service-desc" data-key="s5_desc">Unity, Unreal, networking, gameplay</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s6_title">QA / Game Testing</div>
+          <div class="service-desc" data-key="s6_desc">Full test coverage and quality assurance</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s7_title">Localization / Voiceover</div>
+          <div class="service-desc" data-key="s7_desc">Multi-language translation, casting, VO</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s8_title">Analytics / LiveOps</div>
+          <div class="service-desc" data-key="s8_desc">Data, A/B testing, retention, monetization</div>
+        </div>
+        <div class="service-card">
+          <div class="service-title" data-key="s9_title">Prototyping / R&D</div>
+          <div class="service-desc" data-key="s9_desc">Tech research and fast prototyping</div>
+        </div>
       </div>
     </section>
 
@@ -86,111 +132,82 @@
       <h2 data-key="portfolio_title">Our Projects</h2>
       <div class="projects-grid">
         <div class="project">
-      <img src="assets/project1.jpg" alt="">
-      <video muted loop><source src="assets/project1.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p1_title">Shadow Drift</h3>
-        <p data-key="p1_desc">Stealth action game in a neon-lit city. Avoid detection and hack into secure systems.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project2.jpg" alt="">
-      <video muted loop><source src="assets/project2.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p2_title">Echo Protocol</h3>
-        <p data-key="p2_desc">Tactical sci-fi shooter with team-based objectives and destructible environments.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project3.jpg" alt="">
-      <video muted loop><source src="assets/project3.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p3_title">Neon Warden</h3>
-        <p data-key="p3_desc">Manage a futuristic prison and uncover conspiracies in a dark pixel world.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project4.jpg" alt="">
-      <video muted loop><source src="assets/project4.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p4_title">Pixel Forge</h3>
-        <p data-key="p4_desc">Forge unique weapons with lore in a procedurally-generated side-scrolling world.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project5.jpg" alt="">
-      <video muted loop><source src="assets/project5.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p5_title">Rift Hunters</h3>
-        <p data-key="p5_desc">Switch between dimensions to hunt creatures across parallel universes.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project6.jpg" alt="">
-      <video muted loop><source src="assets/project6.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p6_title">Crimson Arena</h3>
-        <p data-key="p6_desc">Fast-paced multiplayer combat in stylized gothic arenas.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project7.jpg" alt="">
-      <video muted loop><source src="assets/project7.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p7_title">Void Symphony</h3>
-        <p data-key="p7_desc">Narrative-heavy space adventure where music alters reality.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="assets/project8.jpg" alt="">
-      <video muted loop><source src="assets/project8.mp4" type="video/mp4"></video>
-      <div class="project-info">
-        <h3 data-key="p8_title">Quantum Bloom</h3>
-        <p data-key="p8_desc">A puzzle platformer where every flower blooms with a memory.</p>
-      </div>
-    </div>
+          <img src="assets/projects/pics/project1.jpg" alt="">
+          <video muted loop><source src="assets/project1.mp4" type="video/mp4"></video>
+          <div class="project-info">
+            <h3 data-key="p1_title">Life is strange</h3>
+            <p data-key="p1_desc">Episodic narrative adventure with branching dialogue, choice-based progression, and time-rewind mechanics.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/projects/pics/project2.jpg" alt="">
+          <video muted loop><source src="assets/project2.mp4" type="video/mp4"></video>
+          <div class="project-info">
+            <h3 data-key="p2_title">Life is strange 2</h3>
+            <p data-key="p2_desc">Episodic narrative adventure with branching choices, emotional storytelling, and AI-driven companion behavior.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/projects/pics/project3.jpg" alt="">
+          <video muted loop><source src="assets/project3.mp4" type="video/mp4"></video>
+          <div class="project-info">
+            <h3 data-key="p3_title">Hitman 3</h3>
+            <p data-key="p3_desc">Stealth action game with sandbox missions, systemic AI, and multi-path level design across global locations.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/projects/pics/project4.jpg" alt="">
+          <video muted loop><source src="assets/project4.mp4" type="video/mp4"></video>
+          <div class="project-info">
+            <h3 data-key="p4_title">Unannounced Mobile MMORPG</h3>
+            <p data-key="p4_desc">Mobile MMORPG survival game with crafting, open world exploration, and real-time PvP mechanics.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/projects/pics/project5.jpg" alt="">
+          <video muted loop><source src="assets/project5.mp4" type="video/mp4"></video>
+          <div class="project-info">
+            <h3 data-key="p5_title">11+ Casual Mobile Games</h3>
+            <p data-key="p5_desc">Casual mobile games with fast onboarding, lightweight mechanics, and high user retention across genres.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/projects/pics/project6.jpg" alt="">
+          <video muted loop><source src="assets/project6.mp4" type="video/mp4"></video>
+          <div class="project-info">
+            <h3 data-key="p6_title">7+ MidCore Mobile Games</h3>
+            <p data-key="p6_desc">Midcore projects with session-based combat, meta-progression, and monetization-ready systems.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="platforms" class="section platforms">
       <h2 data-key="platforms_title">Platforms</h2>
       <div class="platform-icons">
-        <img src="assets/platform_pc.svg" alt="Supported Platforms" />
-	<img src="assets/platform_xbox.svg" alt="Supported Platforms" />
-	<img src="assets/platform_playstation.svg" alt="Supported Platforms" />
-	<img src="assets/platform_android.svg" alt="Supported Platforms" />
-	<img src="assets/platform_ios.svg" alt="Supported Platforms" />
-	<img src="assets/platform_steam.svg" alt="Supported Platforms" />
-	<img src="assets/platform_steamdeck.svg" alt="Supported Platforms" />
+        <img src="assets/platforms/pc.svg" alt="Supported Platforms" />
+        <img src="assets/platforms/xbox.svg" alt="Supported Platforms" />
+        <img src="assets/platforms/playstation.svg" alt="Supported Platforms" />
+        <img src="assets/platforms/android.svg" alt="Supported Platforms" />
+        <img src="assets/platforms/ios.svg" alt="Supported Platforms" />
+        <img src="assets/platforms/steam.svg" alt="Supported Platforms" />
       </div>
     </section>
 
     <section id="contact" class="section contact">
       <h2 data-key="contact_title">Contact Us</h2>
       <form id="contact-form" action="https://formspree.io/f/xldnqarq" method="POST">
-      <!-- Honeypot field -->
-      <input type="text" name="_gotcha" style="display:none">
-
-      <!-- Email -->
-      <input type="email" name="email" placeholder="Your email" required />
-
-      <!-- Message -->
-      <textarea name="message" placeholder="Your message" rows="5" required></textarea>
-
-      <!-- reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="6LeKs38rAAAAAOV5MhKAcyoSR8x5Bixd6JfeN53I"></div>
-
-      <!-- Status -->
-      <div id="form-status" class="form-status"></div>
-
-      <button type="submit">Send</button>
+        <!-- Honeypot field -->
+        <input type="text" name="_gotcha" style="display:none">
+        <!-- Email -->
+        <input type="email" name="email" placeholder="Your email" required />
+        <!-- Message -->
+        <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+        <!-- reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LeKs38rAAAAAOV5MhKAcyoSR8x5Bixd6JfeN53I"></div>
+        <!-- Status -->
+        <div id="form-status" class="form-status"></div>
+        <button type="submit">Send</button>
       </form>
     </section>
 
@@ -206,20 +223,20 @@
       <div class="footer-location"><p>Core team — Batumi, Georgia</p></div>
       <div class="social-icons">
         <a href="https://discord.gg/HBfDGvTB" target="_blank" rel="noopener noreferrer">
-    		<img src="assets/social/discord.svg" alt="Discord" />
-  	</a>
-  	<a href="https://t.me/petrov_peter" target="_blank" rel="noopener noreferrer">
-    		<img src="assets/social/telegram.svg" alt="Telegram" />
-  	</a>
-  	<a href="https://reddit.com/user/yourprofile" target="_blank" rel="noopener noreferrer">
-    		<img src="assets/social/reddit.svg" alt="Reddit" />
-  	</a>
-  	<a href="https://www.artstation.com/yourstudio" target="_blank" rel="noopener noreferrer">
-    		<img src="assets/social/artstation.svg" alt="ArtStation" />
-  	</a>
-  	<a href="https://www.linkedin.com/company/yourstudio" target="_blank" rel="noopenernoreferrer">
-    		<img src="assets/social/linkedin.svg" alt="LinkedIn" />
-  	</a>
+          <img src="assets/social/discord.svg" alt="Discord" />
+        </a>
+        <a href="https://t.me/petrov_peter" target="_blank" rel="noopener noreferrer">
+          <img src="assets/social/telegram.svg" alt="Telegram" />
+        </a>
+        <a href="https://reddit.com/user/yourprofile" target="_blank" rel="noopener noreferrer">
+          <img src="assets/social/reddit.svg" alt="Reddit" />
+        </a>
+        <a href="https://www.artstation.com/yourstudio" target="_blank" rel="noopener noreferrer">
+          <img src="assets/social/artstation.svg" alt="ArtStation" />
+        </a>
+        <a href="https://www.linkedin.com/company/yourstudio" target="_blank" rel="noopenernoreferrer">
+          <img src="assets/social/linkedin.svg" alt="LinkedIn" />
+        </a>
       </div>
     </footer>
   </div>

@@ -78,6 +78,81 @@ nav a:hover {
   border: none;
 }
 
+/* Мобильный бургер и меню */
+.desktop-nav, .desktop-lang {
+  display: flex;
+}
+.mobile-burger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+@media (max-width: 900px) {
+  .desktop-nav,
+  .desktop-lang,
+  .footer-links {
+    display: none !important;
+  }
+  .mobile-burger {
+    display: block;
+  }
+}
+/* Мобильное меню (бургер) */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,0,10,0.98);
+  z-index: 2000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 90px;
+  color: white;
+}
+.mobile-menu.open {
+  display: flex;
+}
+.mobile-menu-header {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.mobile-menu a {
+  color: white;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.mobile-lang {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 900px) {
+  .mobile-menu {
+    display: none;
+  }
+  .mobile-menu.open {
+    display: flex;
+  }
+}
+/* Прочее: футер-меню скрывать на мобиле */
+@media (max-width: 900px) {
+  .footer-links {
+    display: none !important;
+  }
+}
+
 /* Hero */
 .hero {
   height: 90vh;
@@ -133,7 +208,7 @@ h2 {
 /* About Features */
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* фиксируем ровно 4 колонки */
   gap: 1.5rem;
 }
 
@@ -144,6 +219,15 @@ h2 {
   text-align: center;
   transition: 0.3s ease;
 }
+.feature-title, .service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.feature-desc, .service-desc {
+  font-size: 1rem;
+  opacity: 0.8;
+}
 
 .feature-card:hover {
   transform: translateY(-5px);
@@ -152,12 +236,12 @@ h2 {
 
 /* Counters */
 .counters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin: 3rem 0;
 }
+
 
 .counter .num {
   font-size: 2.5rem;
@@ -169,37 +253,20 @@ h2 {
   margin-top: 0.5rem;
   text-align: center;
 }
-
-/* Partners Carousel */
-.partners-carousel {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 2rem;
+.counter {
+  text-align: center;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 3rem;
-  animation: scroll 20s linear infinite;
-  width: max-content;
+@media (max-width: 900px) {
+  .features, .counters {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
-
-.carousel-track img {
-  height: 80px;
-  opacity: 0.8;
-  transition: transform 0.3s;
+@media (max-width: 600px) {
+  .features, .counters {
+    grid-template-columns: 1fr !important;
+  }
 }
-
-.carousel-track img:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
 /* Services */
 .services-grid {
   display: grid;
@@ -215,6 +282,12 @@ h2 {
   text-align: center;
   transition: 0.3s ease;
 }
+.service-title {
+  /* уже задано выше */
+}
+.service-desc {
+  /* уже задано выше */
+}
 
 .service-card:hover {
   transform: translateY(-5px);
@@ -224,8 +297,18 @@ h2 {
 /* Projects */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* теперь 3 вместо 4 */
   gap: 1.5rem;
+}
+@media (max-width: 1023px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project {
@@ -357,9 +440,8 @@ footer {
 .social-icons img:hover {
   filter: none;
 }
-.counter {
-  text-align: center;
-}
+
+/* Статусы формы */
 .form-status {
   text-align: center;
   margin-top: 0.5rem;
@@ -387,7 +469,6 @@ footer {
   width: auto; /* <<< вот это главное! */
   max-width: 100%;
 }
-
 .contact button[type="submit"]:hover {
   background-color: #eee;
 }
